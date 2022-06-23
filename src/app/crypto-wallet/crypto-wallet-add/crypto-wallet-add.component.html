@@ -1,0 +1,41 @@
+<div style="padding-left: 3%;padding-top: 2%; width: 60%" >
+    <h2>Add to Wallet</h2>
+    <form [formGroup]="addWallet" (submit)="onSubmitClicked(addWallet)" autocomplete="off">
+        <div class="button-width">
+            <button mat-flat-button class="cryptButton" color="primary" type="submit">
+                Add
+            </button> &nbsp;
+            <button mat-flat-button class="cryptButton" color="primary" type="button" (click)="onCancel()">
+                Cancel
+            </button>
+        </div>
+        <div class="div">
+            <mat-form-field >
+                <mat-select placeholder="Crypto Name" formControlName="cryptoName" name="cryptoName"
+                    (selectionChange)="onCryptoNameChanged($event)">
+                    <mat-option *ngFor="let data of assetsData" value="{{ data.id }}">
+                        {{ data.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="div">
+            <mat-form-field >
+                <input matInput type="number" [required]="true" placeholder="Quantity" pattern="[ 0-9. ]*" maxlength="20"
+                    formControlName="quantity" name="quantity" required min="0.0000000001">
+                    <mat-error *ngIf="addWallet.get('quantity').hasError('required')">Please enter Quantity</mat-error>
+                    <mat-error *ngIf="addWallet.get('quantity').hasError('pattern')">Only Numbers are allowed</mat-error>
+                    <mat-error *ngIf="addWallet.get('quantity').hasError('min')">Should be more than 0</mat-error>
+                    <mat-error *ngIf="addWallet.get('quantity').hasError('excess')">Quantity is more than supply</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="div">
+            <mat-label class="mat-label twentyPercentage boldText">Supply: </mat-label>
+            <mat-label class="mat-label-data">{{selectedAsset.supply}}</mat-label>
+        </div>
+        <div class="div">
+            <mat-label class="mat-label twentyPercentage boldText">Amount: </mat-label>
+            <mat-label class="mat-label-data">{{amt}}</mat-label>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+.toolbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #045a30;
+    color: white;
+    font-weight: 500;
+    font-size: 26px;
+  }
+
+mat-sidenav {
+    width: 250px;
+}
+main {
+    padding: 10px;
+}

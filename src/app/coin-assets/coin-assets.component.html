@@ -1,0 +1,49 @@
+
+<div style="padding-left: 3%;padding-top: 2%;">
+    <h2>Crypto Currency Summary</h2>
+    <div class="example-header">
+        <mat-form-field>
+            <input matInput (keyup)="searchAsset($event.target.value)" placeholder="Search">
+        </mat-form-field>
+    </div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="rank">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank</th>
+        <td mat-cell *matCellDef="let element">{{element.rank}}</td>
+    </ng-container>
+    <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef>Symbol</th>
+        <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="priceUsd">
+        <th mat-header-cell *matHeaderCellDef>Price(USD)</th>
+        <td mat-cell *matCellDef="let element">{{element.priceUsd}}</td>
+    </ng-container>
+    <ng-container matColumnDef="supply">
+        <th mat-header-cell *matHeaderCellDef>Supply</th>
+        <td mat-cell *matCellDef="let element">{{element.supply}}</td>
+    </ng-container>
+    <ng-container matColumnDef="changePercent24Hr">
+        <th mat-header-cell *matHeaderCellDef>% Change(24Hr)</th>
+        <td mat-cell *matCellDef="let element" [ngClass]="{'increase': element.changePercent24Hr > 0,'decrease':element.changePercent24Hr < 0}">{{element.changePercent24Hr}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="viewDetail(row)" ></tr>
+</table>
+
+<mat-paginator #paginator
+                [pageSize] = "10"
+                [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons] = "true">
+  </mat-paginator>
+</div>

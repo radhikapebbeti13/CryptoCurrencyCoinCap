@@ -1,0 +1,50 @@
+<div style="padding-left: 3%;padding-top: 2%; width: 60%" >
+    <h2>Details of {{assetData.name}}</h2>
+    <a [routerLink]="['']">Back to Summary</a>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Rank: </mat-label>
+        <mat-label class="mat-label-data">{{assetData.rank}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Symbol: </mat-label>
+        <mat-label class="mat-label-data">{{assetData.symbol}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Name: </mat-label>
+        <mat-label class="mat-label-data">{{assetData.name}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Price(USD): </mat-label>
+        <mat-label class="mat-label-data">{{assetData.priceUsd}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">% Change(24 Hr): </mat-label>
+        <mat-label class="mat-label-data">{{assetData.changePercent24Hr}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Supply: </mat-label>
+        <mat-label class="mat-label-data">{{assetData.supply}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Max Supply: </mat-label>
+        <mat-label class="mat-label-data">{{assetData.maxSupply}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Market Capital(USD): </mat-label>
+        <mat-label class="mat-label-data">{{assetData.marketCapUsd}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Volume in 24 Hr(USD): </mat-label>
+        <mat-label class="mat-label-data">{{assetData.volumeUsd24Hr}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">VWap (24 Hr): </mat-label>
+        <mat-label class="mat-label-data">{{assetData.vwap24Hr}}</mat-label>
+    </div>
+    <div class="div">
+        <mat-label class="mat-label fortyPercentage boldText">Website: </mat-label>
+        <a href="{{assetData.explorer}}" target="_blank">{{assetData.explorer}}</a>
+    </div>
+</div>
+
+

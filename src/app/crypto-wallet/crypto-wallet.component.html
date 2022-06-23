@@ -1,0 +1,48 @@
+
+<div style="padding-left: 3%;padding-top: 2%;">
+    <h2>Crypto Wallet</h2>
+
+    <div style="padding-bottom: 1%;">
+        <button (click)="onAddWallet()">Add to Wallet</button>
+    </div>
+
+    <div style="padding-bottom: 1%;">
+        <mat-label class="mat-label fortyPercentage boldText">Total Amount: </mat-label>
+        <mat-label class="mat-label-data">{{totalAmount}} </mat-label>
+    </div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="cryptoID">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{element.cryptoID}}</td>
+    </ng-container>
+    <ng-container matColumnDef="cryptoName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Crypto Name</th>
+        <td mat-cell *matCellDef="let element">{{element.cryptoName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Quantity</th>
+        <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+    </ng-container>
+    <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let element">{{element.amount}}</td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action </th>
+        <td mat-cell *matCellDef="let element;  let j = index;"> 
+            <button mat-raised-button  color="warn" focusable="false" (click)="deleteCrypto(element, j)">
+                <i class="fa fa-times mat-icon"></i> Remove
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator #paginator
+                [pageSize] = "10"
+                [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons] = "true">
+  </mat-paginator>
+</div>

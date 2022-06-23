@@ -1,0 +1,27 @@
+
+<div class="toolbar">
+    <span>&nbsp;&nbsp;&nbsp;Crypto Currency</span>
+</div>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened role="navigation">
+        <mat-nav-list>
+            <label style="padding-left: 16px; display: flex; box-sizing: border-box; flex-direction: row;
+            font-size: 18px; font-weight: 500; height: 48px; align-items: center;">MENU</label>
+            <a mat-list-item routerLink="" >
+                <span class="nav-caption">Home</span>
+            </a>
+            <a mat-list-item routerLink="/cryptoCurrency" >
+                <span class="nav-caption">Crypto Currency Summary</span>
+            </a>
+            <a mat-list-item routerLink="/cryptoWallet" >
+                <span class="nav-caption">Wallet</span>   
+            </a>
+          </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+            <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<footer>
+
+</footer>

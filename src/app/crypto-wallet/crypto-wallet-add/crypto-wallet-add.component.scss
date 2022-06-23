@@ -1,0 +1,17 @@
+.div {
+    width: 80%;
+    vertical-align: top;
+    display: flex;
+    margin-top: 25px;
+}
+
+mat-label {
+    &.mat-label-data {
+      &.right-align {
+        text-align: right;
+        width: 60%
+      }
+    }
+    &.boldText { font-weight: 500;}
+    &.twentyPercentage {  width: 20%;  }
+}
